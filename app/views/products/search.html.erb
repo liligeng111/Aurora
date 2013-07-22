@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <title>"<%= @keyword %>"的搜索结果</title>
+<% end %>
+
+<div class="recommand">
+  <ul class="recommand_ul">
+
+    <% for j in 0..2 do%>
+
+    <% for i in 0..4 do %>
+    <% n = 3 * j + i %>
+    <% break if @products[n] == nil %>
+    <% id = @products[n].id %>
+    <li class="recommand_item">
+      <div class="item_brand"><%= @products[n].brand %></div>
+      <%= link_to image_tag(id.to_s + ".jpg", :class => "item_img", :border => 0), product_path(id), :controller => 'products' %>
+      <div class="item_info"><%= @products[n].name %></div>
+      <div class="item_price">￥299</div>
+    </li>
+    <% end %>
+    <% end %>
+    <div style="clear:both;"></div>
+  </ul>
+</div>

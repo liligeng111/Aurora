@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "top" %>
+  <%= stylesheet_link_tag params[:controller] + "\\" + params[:action], "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body>
+<%= render 'top' %>
+
+<script Language="JavaScript"> 
+$(document).ready(function() 
+{
+	run_top();
+});
+</script> 
+
+<%= yield %>
+
+<%= render 'footer' %>
+</body>
+</html>

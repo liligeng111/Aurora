@@ -1,0 +1,106 @@
+$border : 1px solid #b0b0b0;
+$white: #fcfcfc;
+$gray  : #666666;
+$dark_gray : #444444;
+$dark_gray2: #222222;
+$light_gray : #999999;
+$red : #c3272b;
+$recommand_poster_width : 450px;
+$recommand_item_width : 175px;
+$recommand_height : 280px;
+$recommand_brand_height : 30px;
+$recommand_info_height : 45px;
+
+input
+{
+	box-sizing: border-box;
+}
+
+img
+{
+	display: block;
+}
+
+
+
+.recommand
+{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.recommand_bar
+{
+	font: bold 20px "Microsoft Yahei";
+	color: $dark_gray;
+	border-bottom: $border;
+}
+
+.recommand_ul
+{
+	list-style: none;
+	padding: 0px;
+}
+
+.recommand_poster
+{
+	width: $recommand_poster_width;
+	height: $recommand_height;
+	margin-bottom: 30px;
+	border: $border;
+	float: left;
+}
+
+.poster_img
+{
+	height: $recommand_height;
+	width: $recommand_poster_width;
+}
+
+.recommand_item
+{
+	width: $recommand_item_width;
+	height: $recommand_height;
+	margin-left: (1016px - $recommand_poster_width - $recommand_item_width * 3) / 3;
+	margin-bottom: 30px;
+	border: $border;
+	float: left;
+}
+
+
+.item_brand
+{
+	font: bold 20px "Microsoft JhengHei";
+	float: right;
+	color: $dark_gray;
+	height: $recommand_brand_height;
+	line-height: $recommand_brand_height;
+}
+
+.item_img
+{
+	border-top: $border;
+	height: $recommand_item_width;
+	width: $recommand_item_width;
+}
+
+.item_info
+{
+	color: #424b50;
+	font-size: 12px;
+	text-align: center;
+	margin: 0 auto;
+	height: $recommand_info_height;
+	line-height: $recommand_info_height;
+	border-top: $border;
+}
+
+.item_price
+{
+	font : bold 20px "Microsoft Yahei";
+	font-size: 20px;
+	color: $red;
+	text-align : right;
+	margin: 0 auto;
+	height: $recommand_height - $recommand_item_width - $recommand_brand_height - $recommand_info_height - 2px;
+}

@@ -1,0 +1,57 @@
+<% content_for :head do %>
+	<title><%= @product.name %></title>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		run_product();
+	});
+  </script>
+<% end %>
+
+<div class="product_info">	
+	<%= image_tag(@product.id.to_s + ".jpg", :class => "product_img", :border => 0) %>
+	<div class="magnifier_lens"></div>
+	<%= content_tag("div", "", :class => "magnifier", :style => "background-image:url(/assets/" + @product.id.to_s + ".jpg)")%>
+	<div class="product_meta">
+		<%= content_tag("div", @product.name, :class => "product_name")%>
+		<ul class="list">
+		 	<li class="item">
+				<div class="name">价格:</div>
+				<div class="price">￥299</div>
+			</li>
+			<li class="item">
+				<div class="name">配送至:</div>
+				<div class="deliver">北京</div>
+			</li>
+			<li class="item">
+				<div class="name">累计售出:</div>
+				<div class="sold">189</div>
+				<div class="name">件</div>
+			</li>
+			<li class="item">
+				<div class="name">尺寸:</div>
+				<div class="size">S 165/88</div>
+				<div class="size selected">M 170/92</div>
+				<div class="size">L 175/96</div>
+				<div class="size">XL 180/100</div>
+				<div class="size_illustration">?</div>
+			</li>
+			<li class="item">
+				<div class="name">购买数量:</div>
+				<div class="number_button" onclick="$(this).next().val(value_minus)">-</div>
+				<input class="number_input" type="text" prompt="1">
+				<div class="number_button" onclick="$(this).prev().val(value_plus)">+</div>
+			</li>
+		</ul>
+		<div class="buttons">
+			<div class="button buy">加入购物车</div>
+			<div class="button favorite">收藏</div>
+		</div>
+	</div>
+
+	<div style="clear:both;"></div>
+
+
+</div>
+
+<div class="wft">
+</div>

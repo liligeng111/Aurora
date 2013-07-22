@@ -1,0 +1,56 @@
+<% content_for :head do %>
+  <title>汉风马牛</title>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		run_index();
+	});
+  </script>
+<% end %>
+
+<div class="gallery">
+	<div class="side left">
+		<div class="layer_top"></div>
+		<div class="layer"></div>
+		<div class="layer_bottom"></div>
+		<div class="block"></div>
+	</div>
+	<div class="side right">
+		<div class="layer_top"></div>
+		<div class="layer"></div>
+		<div class="layer_bottom"></div>
+		<div class="block"></div>
+	</div>
+	<div class="button left_button"><</div>
+	<div class="button right_button">></div>
+	<%= image_tag "g0.jpg", :border => 0, :style => 'margin-left:-1480px'%>
+	<%= image_tag "g1.jpg", :border => 0, :style => 'margin-left:-490px'%>
+	<%= image_tag "g2.jpg", :border => 0, :style => 'margin-left:500px'%>
+	<%= image_tag "g3.jpg", :border => 0, :style => 'margin-left:1490px'%>
+</div>
+
+<div class="recommand">
+	<div class="recommand_bar">热门商品</div>
+	<ul class="recommand_ul">
+
+		<% for j in 0..2 do%>
+		<li class="recommand_poster">
+			<%= image_tag("poster" + j.to_s + ".jpg", :class => "poster_img", :border => 0) %>
+		</li>
+
+		<% for i in 0..2 do %>
+		<% n = 3 * j + i %>
+		<% id = @products[n].id %>
+		<li class="recommand_item">
+			<div class="item_brand"><%= @products[n].brand %></div>
+			<%= link_to image_tag(id.to_s + ".jpg", :class => "item_img", :border => 0), product_path(id), :controller => 'products' %>
+			<div class="item_info">
+				<%=link_to @products[n].name, product_path(id), :controller => 'products', :class => "item_name"%>
+			</div>
+			<div class="item_price">￥299</div>
+		</li>
+		<% end %>
+		<% end %>
+		<div style="clear:both;"></div>
+	</ul>
+</div>
+

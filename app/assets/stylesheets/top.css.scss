@@ -1,0 +1,342 @@
+$border : 1px solid #b0b0b0;
+$white: #fcfcfc;
+$gray  : #666666;
+$dark_gray : #444444;
+$dark_gray2: #222222;
+$light_gray : #999999;
+$red : #c3272b;
+$blue : #117cb0;
+$top_menu_height : 36px;
+$top_menu_opacity : 90;
+$top_menu_height : 36px;
+$input_width : 120px;
+$navigation_opacity : 95;
+$width : 980px;
+
+
+input
+{
+	box-sizing: border-box;
+	outline:none;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+ul
+{
+	list-style: none;
+}
+
+body
+{
+	background-color: $white;
+	margin-top: $top_menu_height;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.ie_bar
+{
+	width: 100%;
+	height: 20px;
+	background-color: $blue;
+	z-index: 1000;
+	text-align: center;
+	color: $white;
+	font: 15px bold "Microsoft Yahei";
+	display: none;
+}
+
+.top_menu
+{
+	position: fixed;
+	left: 0;
+	top: 0px;
+	height: $top_menu_height;
+	width: 100%;	
+	background-color: $dark_gray;
+	background: -webkit-gradient(linear, left top, left bottom, from($dark_gray), to($dark_gray2));
+	background: -moz-linear-gradient(top, $dark_gray, $dark_gray2); 
+
+	filter:alpha(opacity=$top_menu_opacity);
+	-moz-opacity: $top_menu_opacity / 100;
+	opacity: $top_menu_opacity / 100;
+	z-index: 1000;
+}
+
+.top_wrapper
+{
+	margin: 0 auto;
+	padding: 0px;
+	width: $width;
+	height: 100%;
+	list-style: none;
+}
+
+
+.input_wrapper
+{
+	height: 100%;
+	float: left;
+}
+
+
+.input
+{
+	color: $light_gray;
+	margin: 6px;
+	width: $input_width;
+	border: 1px solid $white;
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+.input:focus
+{
+	color: #000;
+}
+
+.home_wrapper
+{
+	height: 100%;
+	margin-right: 30px; 
+	float: left;
+
+	&:hover
+	{
+		background-color: $red;
+	}
+}
+
+
+.login_wrapper
+{
+	height: 100%;
+	float: left;
+
+	&:hover
+	{
+		background-color: $red;
+	}
+}
+
+.top_menu .home
+{
+	color: $white;
+	float: left;
+	margin: 8px;
+	font: bold 15px "Microsoft Yahei";
+}
+
+.login
+{
+	color: $white;
+	float: left;
+	margin: 8px;
+	font: bold 15px "Microsoft Yahei";
+}
+
+.top_menu_item_wrapper
+{
+	height: 100%;
+	float: right;	
+
+	&:hover
+	{		
+		background-color: $red;
+	}
+}
+
+.top_menu_item
+{
+	color: $white;
+	float: left;
+	margin: 8px;
+	font: bold 15px "Microsoft JhengHei";
+	text-decoration : none; 
+}
+
+.navigation
+{	
+	position: fixed;
+	top: $top_menu_height;
+	left: 0;
+	right: 0;
+	height: 400px;
+	width: $width - 4px;	
+	margin: 0 auto;
+	border: 2px solid $red;
+	border-top: 0;
+	background-color: $white;
+	filter:alpha(opacity=$navigation_opacity );
+	-moz-opacity: $navigation_opacity / 100;
+	opacity: $navigation_opacity / 100;
+	display: none;
+	z-index: 1000;
+}
+
+$navigation_left_width : 150px;
+.navigation_left
+{
+	position: absolute;
+	left: 0;
+	top: 10%;
+	height: 90%;
+	width: $navigation_left_width;
+	padding: 0;
+	margin: auto;
+	list-style: none;
+}
+
+.navigation_left_item
+{
+	width: 100%;
+	height: 40px;
+	margin: auto;
+	padding-top: 10px;
+	color: $dark_gray;
+	font: bold 20px "Microsoft Yahei";
+	text-align: center;
+	// border-bottom:$border;
+
+	&:hover
+	{
+		background-color: $red;	
+		color: $white;		
+	}
+}
+
+$separator_height : 90%;
+.navigation_separator_top
+{
+	position: absolute;
+	left: $navigation_left_width;
+	top: 50% - $separator_height / 2;
+	width: 2px;
+	height: $separator_height / 2;	
+	background-color: $red;
+	background: -webkit-gradient(linear, left top, left bottom, from($white), to($red));
+	background: -moz-linear-gradient(top, $white, $red); 
+}
+
+.navigation_separator_bottom
+{
+	position: absolute;
+	left: $navigation_left_width;
+	top: 50%;
+	width: 2px;
+	height: $separator_height / 2;	
+	background-color: $red;
+	background: -webkit-gradient(linear, left top, left bottom, from($red), to($white));
+	background: -moz-linear-gradient(top, $red, $white); 
+}
+
+.header
+{
+	padding-top: 20px;
+	margin-top: $top_menu_height; 
+	margin-left: auto;
+	margin-right: auto;
+	height:100px;
+	width: $width;
+}
+
+$logo_width : 280px;
+.logo
+{
+	float: left;
+	height: 100%;
+	width: $logo_width;
+	margin-left: 100px;
+}
+
+
+$search_input_height : 35px;
+$search_input_width : 400px;
+.search_input
+{
+	float: left;
+	color: $light_gray;
+	height: $search_input_height;
+	width: $search_input_width;
+	border: 2px solid $red;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+$search_button_width : 60px;
+.search_button
+{
+	font: bold 15px "Microsoft Yahei";
+	line-height: $search_input_height;
+	color: $white;
+	background-color: $red;
+	border: 0px;
+	float: left;
+	width: $search_button_width;
+	height: $search_input_height;
+	cursor: pointer;
+}
+
+.search
+{
+	float: left;
+	margin-left: 130px;
+	height: 100%;
+	width: $search_input_width + $search_button_width;
+}
+
+.hot_search_list
+{
+	float: left;
+	width: 100%;
+	list-style: none;
+	margin: 0 auto;
+	padding-left: 5px;
+	padding-top: 5px;	
+}
+
+.hot_search
+{
+	text-decoration: none;
+	font-size: 15px;
+	color: $gray;
+}
+
+.footer
+{
+	margin: 10px auto 0 auto;
+	background-color: $dark_gray2;
+}
+
+.footer .wrapper
+{
+	width: $width;
+	margin: 0 auto;
+}
+
+.footer .colomn
+{
+	width: $width / 4;
+	margin: 0;
+	float: left;
+	padding: 0;
+	margin-bottom: 30px;
+}
+
+.footer .colomn li
+{	
+	margin: 3px auto;
+	width: 100%
+}
+
+.footer .link
+{
+	line-height: 30px;
+	font: 12px bold "Microsoft Yahei";
+	color: $white;
+	text-decoration: none;
+}
