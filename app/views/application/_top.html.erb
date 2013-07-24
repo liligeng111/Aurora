@@ -4,23 +4,30 @@
 		<li class="home_wrapper">
 			<%= link_to "首页", {:controller => "/welcome", :action => "index"}, :class => "home" %>
 		</li>
-		<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-			<li class="input_wrapper">
-				<%= f.email_field :email, :class => 'input', :prompt => '注册邮箱'%>
-			</li>
-			<li class="input_wrapper">
-				<%= f.email_field :email, :class => 'input', :prompt => '密码'%>
-			</li>
+
+		<% if user_signed_in?%>		
 			<li class="login_wrapper">
-				<a href='#' onclick="$('.top_menu form').submit(); return false;" class="login">登陆</a>
-			</li>
+				<%= link_to current_user.email, edit_user_registration_path(current_user), :class => "login" %>
+			</li>	
+			<li class="login_wrapper">
+				<%= link_to "注销", destroy_user_session_path, :method => :delete, :class => "login" %>
+			</li>	
+		<% else %>
+			<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+				<li class="input_wrapper">
+					<%= f.email_field :email, :class => 'input', :prompt => '注册邮箱'%>
+				</li>
+				<li class="input_wrapper">
+					<%= f.email_field :password, :class => 'input', :prompt => '密码'%>
+				</li>
+				<li class="login_wrapper">
+					<a href='#' onclick="$('.top_menu form').submit(); return false;" class="login">登陆</a>
+				</li>
+			<% end %>
+			<li class="login_wrapper">
+				<%= link_to "注册", new_user_registration_path, :class => "login" %>
+			</li>			
 		<% end %>
-		<li class="login_wrapper">
-			<%= link_to "注册", new_user_registration_path, :class => "login" %>
-		</li>
-		<li class="login_wrapper">
-			<%= link_to "注销", destroy_user_session_path, :method => :delete, :class => "login" %>
-		</li>
 		<li class="top_menu_item_wrapper">
 			<a href="" class="top_menu_item">鞋品</a>
 		</li>

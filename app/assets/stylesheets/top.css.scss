@@ -345,3 +345,14 @@ $search_button_width : 60px;
 	color: $white;
 	text-decoration: none;
 }
+
+.devise_alert
+{
+	width: 100%;
+	background-color: $blue;
+	color: $white;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	display: none;
+}

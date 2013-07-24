@@ -8,6 +8,14 @@ function run_top()
 		$('.ie_bar').fadeIn();
 		$('.header').css('paddingTop', '0px');
 	}
+
+	//devise alert
+	if($('.devise_alert').text() != '')
+	{
+		$('.devise_alert').fadeIn();
+		setTimeout("$('.devise_alert').fadeOut();", 3000);
+	}
+
 }
 
 function input()

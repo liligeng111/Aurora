@@ -1,6 +1,10 @@
+<% content_for :head do %>
+	<title><%= '欢迎加入我们！' %></title>
+<% end %>
+
 <div class="window">
 	<div class="sign_up">
-		<h1>欢迎加入我们</h1>
+		<h1>欢迎加入我们！</h1>
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			<%= devise_error_messages! %>
 
