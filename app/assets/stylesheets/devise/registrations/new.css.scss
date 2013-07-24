@@ -1,0 +1,85 @@
+$white: #fcfcfc;
+$gray  : #666666;
+$dark_gray : #444444;
+$dark_gray2: #222222;
+$light_gray : #999999;
+$red : #c3272b;
+$orange : #ed5736;
+$blue : #117cb0;
+$yellow : #efdeb0;
+
+.window
+{
+	width: 700px;
+	margin: 0px auto 100px auto;
+}
+
+.sign_up
+{
+	float: left;
+	width: 500px;
+}
+
+.sign_up #error_explanation 
+{
+	color: $red;
+}
+
+.sign_up h1
+{
+	font-family: "Microsoft Yahei";
+	color: $dark_gray;
+	margin-bottom: 30px;
+}
+
+.sign_up .item
+{
+	margin: 15px auto;
+	height: 30px;
+}
+
+.sign_up label
+{
+	color: $dark_gray;
+	float: left;
+	margin-right: 15px;
+	text-align: right;
+	width: 80px;
+	font-size: 14px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.sign_up input
+{
+	width: 200px;
+	height: 30px;
+}
+
+.sign_up a
+{
+	color: $dark_gray;
+}
+
+.sign_up .button input
+{
+	margin-top: 20px;
+	margin-left: 95px;
+	width: 80px;
+	cursor: pointer;
+}
+
+.links
+{
+	padding-top: 100px;
+	text-align: right;
+	width: 200px;
+	float: left;
+	font-size: 15px;
+	color: $dark_gray;
+}
+
+.links a
+{
+	color: $blue;
+}

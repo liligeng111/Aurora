@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show]
+	
+	protect_from_forgery :except => [:index, :show]
 
 	def search
 		@keyword = params[:keyword];
@@ -47,8 +49,6 @@ class ProductsController < ApplicationController
 		@product.destroy 
 		redirect_to products_path
 	end
-
-	skip_before_filter :verify_authenticity_token
 
 	private
 		def product_params
