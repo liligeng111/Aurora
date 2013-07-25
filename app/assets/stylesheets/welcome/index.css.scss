@@ -74,12 +74,14 @@ img
 
 .gallery .left .layer
 {
-	background: -webkit-gradient(linear, right top, left top, from($gradient_start), to($gradient_end));	
+	background: -webkit-gradient(linear, right top, left top, from($gradient_start), to($gradient_end));
+    background: -ms-linear-gradient(right, $gradient_start, $gradient_end);	
 }
 
 .gallery .right .layer
 {
 	background: -webkit-gradient(linear, left top, right top, from($gradient_start), to($gradient_end));	
+    background: -ms-linear-gradient(left, $gradient_start, $gradient_end);	
 }
 
 .gallery .side .layer_top
@@ -90,6 +92,7 @@ img
 	width: $gallery_side_width;
 	z-index: 200;
 	background: -webkit-gradient(linear, left bottom, left top, from($gradient_start), to($gradient_end));	
+    background: -ms-linear-gradient(bottom, $gradient_start, $gradient_end);	
 }
 
 .gallery .side .layer_bottom
@@ -100,6 +103,7 @@ img
 	width: $gallery_side_width;
 	z-index: 200;
 	background: -webkit-gradient(linear, left top, left bottom, from($gradient_start), to($gradient_end));	
+    background: -ms-linear-gradient(top, $gradient_start, $gradient_end);	
 }
 
 .gallery .side .block

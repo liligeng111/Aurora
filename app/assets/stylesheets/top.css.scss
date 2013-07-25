@@ -65,8 +65,11 @@ body
 	background-color: $dark_gray;
 	background: -webkit-gradient(linear, left top, left bottom, from($dark_gray), to($dark_gray2));
 	background: -moz-linear-gradient(top, $dark_gray, $dark_gray2); 
+    background: -ms-linear-gradient(top, $dark_gray, $dark_gray2);
+	filter:
+		progid:XImageTransform.Microsoft.gradient(startColorstr='$dark_gray', endColorstr='$dark_gray2',GradientType=0)
+		alpha(opacity=$top_menu_opacity);
 
-	filter:alpha(opacity=$top_menu_opacity);
 	-moz-opacity: $top_menu_opacity / 100;
 	opacity: $top_menu_opacity / 100;
 	z-index: 1000;
@@ -224,7 +227,10 @@ $separator_height : 90%;
 	height: $separator_height / 2;	
 	background-color: $red;
 	background: -webkit-gradient(linear, left top, left bottom, from($white), to($red));
-	background: -moz-linear-gradient(top, $white, $red); 
+	background: -moz-linear-gradient(top, $white, $red);
+    background: -ms-linear-gradient(top, $white, $red);
+	filter:
+		progid:XImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$red',GradientType=0)
 }
 
 .navigation_separator_bottom
@@ -236,7 +242,10 @@ $separator_height : 90%;
 	height: $separator_height / 2;	
 	background-color: $red;
 	background: -webkit-gradient(linear, left top, left bottom, from($red), to($white));
-	background: -moz-linear-gradient(top, $red, $white); 
+	background: -moz-linear-gradient(top, $red, $white);
+    background: -ms-linear-gradient(top, $red, $white);
+	filter:
+		progid:XImageTransform.Microsoft.gradient(startColorstr='$red', endColorstr='$white',GradientType=0)
 }
 
 .header
