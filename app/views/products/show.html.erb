@@ -13,6 +13,11 @@
 	<%= content_tag("div", "", :class => "magnifier", :style => "background-image:url(/assets/" + @product.id.to_s + ".jpg)")%>
 	<div class="product_meta">
 		<%= content_tag("div", @product.name, :class => "product_name")%>
+
+		<%= form_tag(purchase_path, :method => :post) do %>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />  
+		<%= hidden_field_tag(:item_id, "", :prompt => @product.id) %>
+		<%= hidden_field_tag(:size, "")%>
 		<ul class="list">
 		 	<li class="item">
 				<div class="name">价格:</div>
@@ -38,14 +43,15 @@
 			<li class="item">
 				<div class="name">购买数量:</div>
 				<div class="number_button" onclick="$(this).next().val(value_minus)">-</div>
-				<input class="number_input" type="text" prompt="1">
+				<%= text_field_tag(:number, "", :class => "number_input", :prompt => "1")%>
 				<div class="number_button" onclick="$(this).prev().val(value_plus)">+</div>
 			</li>
 		</ul>
 		<div class="buttons">
-			<div class="button buy" onClick="add_to_cart(<%= @product.id %>, $('.selected').get(0).id, $('.number_input').val())">加入购物车</div>
+			<div class="button buy" onClick="$('#size').val($('.item .selected').get(0).id);$('.product_info form').submit();">加入购物车</div>
 			<div class="button favorite">收藏</div>
 		</div>
+		<% end %>
 	</div>
 
 	<div style="clear:both;"></div>

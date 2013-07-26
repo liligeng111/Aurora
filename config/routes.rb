@@ -7,7 +7,8 @@ Web::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get "/search" => "products#search"
-  post '/purchase' => "product#purchase"
+  post '/purchase' => "products#purchase"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

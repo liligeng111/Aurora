@@ -2,7 +2,6 @@ function run_top()
 {
 	input();
 	// navigation();
-	show_cart_count();
 
 	//for ie users
 	if (document.all)
@@ -116,56 +115,4 @@ function sign_in_click()
 		$('.top_menu form').submit(); 
 	}
 	return false;
-}
-
-function show_cart_count()
-{
-	var cart_count= 0;
-	var first_item = true;
-	for (var v in $.cookie())
-	{
-		//filter other cookies
-		if (v.slice(0,4) != 'cart')
-			continue;
-
-		var id = v.slice(4);
-		//build list
-		var item_wrapper = $("<li class='item_wrapper'></li>");
-		var item = $("<div class='item'></div>");
-		item_wrapper.append(item);
-		$('.shopping_cart_list').append(item_wrapper);
-		if (first_item)
-		{
-			first_item = false;
-			item_wrapper.addClass('first');
-		}
-
-		//item pic
-		var pic = $("<div class='img_wrapper'><img src='/assets/" + id + ".jpg'></div>");
-
-		//item link
-		var link = $("<div class='link_wrapper'><a class='link' href='/products/" + id +"'>hi</a></div>");
-
-		item.append(pic);
-		item.append(link);
-
-		var count = $.cookie()[v].split(',');
-		for (var i = 0; i < count.length; i++)
-		{
-			var n = 0;
-			try
-			{
-				n = parseInt(count[i]);
-			}
-			catch(e)
-			{
-				n = 0;
-			}
-
-			if (!isNaN(n))
-				cart_count += n;
-		}
-	}
-
-	$('.shopping_cart_count').text(cart_count);
 }

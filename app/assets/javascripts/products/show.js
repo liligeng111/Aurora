@@ -69,33 +69,3 @@ function value_plus(index, oldvalue)
 	var value = parseInt(oldvalue);
 	return value + 1;
 }
-
-function add_to_cart(id, size, number)
-{
-	var size = parseInt(size);
-	var number = parseInt(number);
-
-	try
-	{
-		var count = $.cookie('cart' + id).split(',');
-	}
-	catch(e)
-	{
-		var count = [0,0,0,0];
-	}
-
-	try
-	{
-		var old = parseInt(count[size]);
-	}
-	catch(e)
-	{
-		var old = 0;
-	}
-
-	if (isNaN(old))
-		old = 0;
-
-	count[size] = old + number;
-	$.cookie('cart' + id, count, {path: '/'});
-}

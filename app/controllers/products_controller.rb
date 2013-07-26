@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show, :purchase]
 	
-	protect_from_forgery :except => [:index, :show]
+	# protect_from_forgery :except => [:index, :show]	
+	before_filter :authenticate_user!, :only => :purchase
 
 	def search
 		@keyword = params[:keyword];
@@ -9,7 +10,9 @@ class ProductsController < ApplicationController
 	end
 
 	def purchase
-		
+		@number = params[:number]
+		@size = params[:number]
+		@item_id = params[:item_id]
 	end
 
 	def index
