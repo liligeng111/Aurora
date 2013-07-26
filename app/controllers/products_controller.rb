@@ -1,11 +1,15 @@
 class ProductsController < ApplicationController
-	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show]
+	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show, :purchase]
 	
 	protect_from_forgery :except => [:index, :show]
 
 	def search
 		@keyword = params[:keyword];
 		@products = Product.find(:all,:conditions => ["brand like ? or name like ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%"])
+	end
+
+	def purchase
+		
 	end
 
 	def index

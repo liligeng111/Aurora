@@ -21,26 +21,33 @@
 					<%= f.email_field :password, :class => 'input', :prompt => '密码'%>
 				</li>
 				<li class="login_wrapper">
-					<a href='#' onclick="$('.top_menu form').submit(); return false;" class="login">登陆</a>
+					<a href='#' onclick="sign_in_click()" class="login">登陆</a>
+					<%= link_to "", new_user_session_path, :disply => 'hidden', :id => 'sign_in_page'%>
 				</li>
 			<% end %>
 			<li class="login_wrapper">
 				<%= link_to "注册", new_user_registration_path, :class => "login" %>
 			</li>			
 		<% end %>
-		<li class="top_menu_item_wrapper">
+		<li class="top_menu_item_wrapper shopping_cart_count_wrapper">
+			<a href="" class="top_menu_item shopping_cart_count"></a>
+		</li>
+		<li class="top_menu_item_wrapper shopping_cart_wrapper">
+			<a href="" class="top_menu_item shopping_cart">去购物车结算</a>
+		</li>
+		<li class="top_menu_item_wrapper navigation_wrapper">
 			<a href="" class="top_menu_item">鞋品</a>
 		</li>
-		<li class="top_menu_item_wrapper">
+		<li class="top_menu_item_wrapper navigation_wrapper">
 			<a href="" class="top_menu_item">女装</a>
 		</li>
-		<li class="top_menu_item_wrapper">
+		<li class="top_menu_item_wrapper navigation_wrapper">
 			<a href="" class="top_menu_item">男装</a>
 		</li>
 	</ul>
 </div>
 
-<div class="navigation">
+<div class="navigation top_menu_window">
 	<ul class="navigation_left">
 		<li class="navigation_left_item">男装</li>
 		<li class="navigation_left_item">女装</li>
@@ -51,6 +58,9 @@
 	<div class="navigation_separator_bottom">
 	</div>
 </div>
+
+<ul class="shopping_cart_list top_menu_window">
+</ul>
 
 <div class="ie_bar">检测到您正在使用以IE为内核的浏览器，建议您选用Chrome或者Firefox浏览器以获得更好的视觉效果和安全性保障</div>
 

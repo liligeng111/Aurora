@@ -29,10 +29,10 @@
 			</li>
 			<li class="item">
 				<div class="name">尺寸:</div>
-				<div class="size">S 165/88</div>
-				<div class="size selected">M 170/92</div>
-				<div class="size">L 175/96</div>
-				<div class="size">XL 180/100</div>
+				<div id='0' class="size">S 165/88</div>
+				<div id='1' class="size selected">M 170/92</div>
+				<div id='2' class="size">L 175/96</div>
+				<div id='3' class="size">XL 180/100</div>
 				<div class="size_illustration">?</div>
 			</li>
 			<li class="item">
@@ -43,7 +43,7 @@
 			</li>
 		</ul>
 		<div class="buttons">
-			<div class="button buy">加入购物车</div>
+			<div class="button buy" onClick="add_to_cart(<%= @product.id %>, $('.selected').get(0).id, $('.number_input').val())">加入购物车</div>
 			<div class="button favorite">收藏</div>
 		</div>
 	</div>

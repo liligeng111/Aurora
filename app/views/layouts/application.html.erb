@@ -14,6 +14,7 @@
   <% else %>  	
   	<%= stylesheet_link_tag con + "/" + params[:action], "data-turbolinks-track" => true %>
   <% end %>
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= yield :head %>
