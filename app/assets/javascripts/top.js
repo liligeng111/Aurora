@@ -17,6 +17,9 @@ function run_top()
 		setTimeout("$('.devise_alert').fadeOut();", 3000);
 	}
 
+	//authenticity_token
+	$("input[name|='authenticity_token']").val($("[name|='csrf-token']").attr('content'));
+
 }
 
 function input()
