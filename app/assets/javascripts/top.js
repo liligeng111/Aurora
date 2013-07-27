@@ -1,7 +1,7 @@
 function run_top()
 {
 	input();
-	// navigation();
+	navigation();
 
 	//for ie users
 	if (document.all)

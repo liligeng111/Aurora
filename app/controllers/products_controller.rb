@@ -1,18 +1,27 @@
 class ProductsController < ApplicationController
-	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show, :purchase]
+	http_basic_authenticate_with name: "admin", password: "musicchina", except: [:search, :show, :purchase, :recommand]
 	
 	# protect_from_forgery :except => [:index, :show]	
-	before_filter :authenticate_user!, :only => :purchase
+	# before_filter :authenticate_user!, :only => :purchase
 
 	def search
 		@keyword = params[:keyword];
-		@products = Product.find(:all,:conditions => ["brand like ? or name like ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%"])
+		@products = Product.find(:all, :conditions => ["brand like ? or name like ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%"])
 	end
 
 	def purchase
-		@number = params[:number]
-		@size = params[:number]
-		@item_id = params[:item_id]
+		number = params[:number]
+		size = params[:size]
+		item_id = params[:item_id]
+		session[:cart] = Hash.new if session[:cart] == nil
+		session[:cart][item_id] = Hash.new if session[:cart][item_id] == nil
+		session[:cart][item_id][size] = 0 if session[:cart][item_id][size] == nil
+		session[:cart][item_id][size] += number.to_i
+		redirect_to recommand_path :id => item_id
+	end
+
+	def recommand
+		@product = Product.find(params[:id])
 	end
 
 	def index

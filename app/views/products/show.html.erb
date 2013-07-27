@@ -15,7 +15,6 @@
 		<%= content_tag("div", @product.name, :class => "product_name")%>
 
 		<%= form_tag(purchase_path, :method => :post) do %>
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />  
 		<%= hidden_field_tag(:item_id, "", :prompt => @product.id) %>
 		<%= hidden_field_tag(:size, "")%>
 		<ul class="list">

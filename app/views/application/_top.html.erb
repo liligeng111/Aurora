@@ -1,3 +1,32 @@
+<ul class="shopping_cart_list top_menu_window">	
+	<% cart_count = 0 %>
+	<% session[:cart] = Hash.new if session[:cart] == nil %>
+	<% session[:cart].each do |item_id, item_cart| %>
+		<div class="item_wrapper">
+			<div class="item">
+				<div class="img_wrapper">
+					<%= image_tag item_id + ".jpg", :border => 0 %>
+				</div>
+				<div class="link_wrapper">
+					<%= link_to Product.find(item_id).name, product_path(item_id) %>
+				</div>
+				<% size_count = "" %>
+				<% sizes = ['S', 'M', 'L', 'XL'] %>
+				<% item_cart.each do |size, number| %>
+					<% cart_count += number.to_i %>
+					<% size_count += number.to_s + ' x ' + sizes[size.to_i] + ', ' %>
+				<% end %>
+				<% size_count = size_count.slice(0, size_count.length - 2) %>
+				<div class="size_wrapper">
+					<%= size_count %>
+				</div>
+				<div class="price_wrapper">
+					￥299
+				</div>
+			</div>
+		</div>
+	<% end %>
+</ul>
 
 <div class="top_menu">
 	<ul class="top_wrapper">
@@ -30,7 +59,7 @@
 			</li>			
 		<% end %>
 		<li class="top_menu_item_wrapper shopping_cart_count_wrapper">
-			<a href="" class="top_menu_item shopping_cart_count"></a>
+			<a href="" class="top_menu_item shopping_cart_count"><%= cart_count %></a>
 		</li>
 		<li class="top_menu_item_wrapper shopping_cart_wrapper">
 			<a href="" class="top_menu_item shopping_cart">去购物车结算</a>
@@ -58,9 +87,6 @@
 	<div class="navigation_separator_bottom">
 	</div>
 </div>
-
-<ul class="shopping_cart_list top_menu_window">
-</ul>
 
 <div class="ie_bar">检测到您正在使用以IE为内核的浏览器，建议您选用Chrome或者Firefox浏览器以获得更好的视觉效果和安全性保障</div>
 

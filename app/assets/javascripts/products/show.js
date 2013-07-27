@@ -21,6 +21,15 @@ function run_product()
 		$('.product_meta .size').removeClass('selected');
 		$(this).addClass('selected');
 	});
+
+	//make sure item # in valid
+	$('input.number_input').blur(function(){
+		var n = parseInt($(this).val());
+		if (n < 1 || isNaN(n))
+		{
+			$(this).val(1);
+		}
+	});
 }
 
 function img_in()
