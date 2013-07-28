@@ -1,12 +1,4 @@
-$white: #fcfcfc;
-$gray  : #666666;
-$dark_gray : #444444;
-$dark_gray2: #222222;
-$light_gray : #999999;
-$red : #c3272b;
-$orange : #ed5736;
-$blue : #117cb0;
-$yellow : #efdeb0;
+@import "mixins";
 
 .window
 {

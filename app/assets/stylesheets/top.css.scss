@@ -1,18 +1,10 @@
-$border : 1px solid #b0b0b0;
-$white: #fcfcfc;
-$gray  : #666666;
-$dark_gray : #444444;
-$dark_gray2: #222222;
-$light_gray : #999999;
-$red : #c3272b;
-$orange : #ed5736;
-$blue : #117cb0;
-$yellow : #efdeb0;
+@import "mixins";
+
 $top_menu_height : 36px;
-$top_menu_opacity : 90;
+$top_menu_opacity : 0.9;
 $top_menu_height : 36px;
 $input_width : 120px;
-$navigation_opacity : 95;
+$navigation_opacity : 0.95;
 $width : 980px;
 
 
@@ -64,16 +56,8 @@ body
 	top: 0px;
 	height: $top_menu_height;
 	width: 100%;	
-	background-color: $dark_gray;
-	background: -webkit-gradient(linear, left top, left bottom, from($dark_gray), to($dark_gray2));
-	background: -moz-linear-gradient(top, $dark_gray, $dark_gray2); 
-    background: -ms-linear-gradient(top, $dark_gray, $dark_gray2);
-	filter:
-		progid:XImageTransform.Microsoft.gradient(startColorstr='$dark_gray', endColorstr='$dark_gray2',GradientType=0)
-		alpha(opacity=$top_menu_opacity);
-
-	-moz-opacity: $top_menu_opacity / 100;
-	opacity: $top_menu_opacity / 100;
+	@include gradient(top, $dark_gray, $dark_gray2, $dark_gray);
+	@include opacity($top_menu_opacity);
 	z-index: 1000;
 }
 
@@ -201,9 +185,7 @@ body
 	border: 2px solid $red;
 	border-top: 0;
 	background-color: $white;
-	filter:alpha(opacity=$navigation_opacity );
-	-moz-opacity: $navigation_opacity / 100;
-	opacity: $navigation_opacity / 100;
+	@include opacity($navigation_opacity);
 	display: none;
 	z-index: 1000;
 }
@@ -323,12 +305,7 @@ $separator_height : 90%;
 	top: 50% - $separator_height / 2;
 	width: 2px;
 	height: $separator_height / 2;	
-	background-color: $red;
-	background: -webkit-gradient(linear, left top, left bottom, from($white), to($red));
-	background: -moz-linear-gradient(top, $white, $red);
-    background: -ms-linear-gradient(top, $white, $red);
-	filter:
-		progid:XImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$red',GradientType=0);
+	@include gradient(top, $white, $red, $red);
 }
 
 .navigation_separator_bottom
@@ -338,12 +315,7 @@ $separator_height : 90%;
 	top: 50%;
 	width: 2px;
 	height: $separator_height / 2;	
-	// background-color: $red;
-	background: -webkit-gradient(linear, left top, left bottom, from($red), to($white));
-	background: -moz-linear-gradient(top, $red, $white);
-    background: -ms-linear-gradient(top, $red, $white);
-    -pie-background: linear-gradient($red, $white);
-    behavior: url(/stylesheets/PIE.htc);
+	@include gradient(top, $red, $white, $red);
 }
 
 .header

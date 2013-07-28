@@ -1,10 +1,4 @@
-$border : 1px solid #b0b0b0;
-$white: #fcfcfc;
-$gray  : #666666;
-$dark_gray : #444444;
-$dark_gray2: #222222;
-$light_gray : #999999;
-$red : #c3272b;
+@import "mixins";
 $recommand_poster_width : 430px;
 $recommand_item_width : 165px;
 $recommand_height : 265px;
@@ -132,7 +126,8 @@ img
 	width: 80px;
 	height: 80px;
 	z-index: 200;
-	opacity: 0.1;
+	color: $dark_gray;
+	@include opacity(0.1);
 	font: 70px cold "Microsoft Yahei";
 	text-align: center;
 	margin-top: (605px - 80px) / 2;
@@ -140,7 +135,7 @@ img
 
 	&:hover
 	{
-		opacity: 0.8;
+		@include opacity(0.8);
 	}
 }
 
@@ -220,7 +215,7 @@ img
 
 	&:hover
 	{
-		opacity: 0.6;
+		@include opacity(0.6);
 	}
 }
 

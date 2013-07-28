@@ -1,0 +1,29 @@
+$border : 1px solid #b0b0b0;
+$white: #fcfcfc;
+$gray  : #666666;
+$dark_gray : #444444;
+$dark_gray2: #222222;
+$light_gray : #999999;
+$red : #c3272b;
+$orange : #ed5736;
+$blue : #117cb0;
+$yellow : #efdeb0;
+
+@mixin gradient($direction, $start, $end, $default)
+{
+	background-color: $default;
+	background: -webkit-linear-gradient($direction, $start, $end);
+	background: -moz-linear-gradient($direction, $start, $end);
+    background: -ms-linear-gradient($direction, $start, $end);
+    -pie-background: linear-gradient($start, $end);
+    behavior: url(/stylesheets/PIE.htc);
+}
+
+@mixin opacity($value)
+{
+	//-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter:alpha(opacity=$value*100);
+	-moz-opacity: $value;
+	-khtml-opacity: $value;
+	opacity: $value;
+}

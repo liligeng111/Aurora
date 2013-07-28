@@ -1,17 +1,8 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$border : 1px solid #b0b0b0;
-$white: #fcfcfc;
-$gray  : #666666;
-$dark_gray : #444444;
-$dark_gray2: #222222;
-$light_gray : #999999;
-$red : #c3272b;
-$orange : #ed5736;
-$blue : #117cb0;
-$yellow : #efdeb0;
-$magnifier_opacity : 60;
+@import "mixins";
+$magnifier_opacity : 0.6;
 
 $magnifier_width : 490px;
 $magnification : 5;
@@ -59,11 +50,8 @@ img
 	height: 100px;
 	width: 100px;
 	background-color: $blue;
-	display: none;
-
-	filter:alpha(opacity=$magnifier_opacity);
-	-moz-opacity: $magnifier_opacity / 100;
-	opacity: $magnifier_opacity / 100;
+	display: none;	
+	@include opacity($magnifier_opacity);
 }
 
 .magnifier

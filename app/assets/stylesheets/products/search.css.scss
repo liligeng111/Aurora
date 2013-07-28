@@ -1,10 +1,4 @@
-$border : 1px solid #b0b0b0;
-$white: #fcfcfc;
-$gray  : #666666;
-$dark_gray : #444444;
-$dark_gray2: #222222;
-$light_gray : #999999;
-$red : #c3272b;
+@import "mixins";
 $recommand_poster_width : 450px;
 $recommand_item_width : 175px;
 $recommand_height : 280px;
