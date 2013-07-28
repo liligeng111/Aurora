@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
 	end
 
 	def purchase
-		number = params[:number]
-		size = params[:size]
-		item_id = params[:item_id]
+		number = params[:number].to_i
+		size = params[:size].to_i
+		item_id = params[:item_id].to_i
 		session[:cart] = Hash.new if session[:cart] == nil
 		session[:cart][item_id] = Hash.new if session[:cart][item_id] == nil
 		session[:cart][item_id][size] = 0 if session[:cart][item_id][size] == nil

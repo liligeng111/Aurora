@@ -328,7 +328,7 @@ $separator_height : 90%;
 	background: -moz-linear-gradient(top, $white, $red);
     background: -ms-linear-gradient(top, $white, $red);
 	filter:
-		progid:XImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$red',GradientType=0)
+		progid:XImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$red',GradientType=0);
 }
 
 .navigation_separator_bottom
@@ -338,12 +338,12 @@ $separator_height : 90%;
 	top: 50%;
 	width: 2px;
 	height: $separator_height / 2;	
-	background-color: $red;
+	// background-color: $red;
 	background: -webkit-gradient(linear, left top, left bottom, from($red), to($white));
 	background: -moz-linear-gradient(top, $red, $white);
     background: -ms-linear-gradient(top, $red, $white);
-	filter:
-		progid:XImageTransform.Microsoft.gradient(startColorstr='$red', endColorstr='$white',GradientType=0)
+    -pie-background: linear-gradient($red, $white);
+    behavior: url(/stylesheets/PIE.htc);
 }
 
 .header

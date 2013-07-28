@@ -15,7 +15,7 @@ function run_index()
 	gallery_button_last_click = 0;
 
 	//button
-	$('.gallery .right_button').click(function(){		
+	$('.gallery .right_button').click(function(){
 		var time = new Date();
 		if (time.getTime() - gallery_button_last_click < 500)
 			return;
