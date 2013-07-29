@@ -9,13 +9,13 @@ $orange : #ed5736;
 $blue : #117cb0;
 $yellow : #efdeb0;
 
-@mixin gradient($direction, $start, $end, $default)
+@mixin gradient($direction, $start, $end, $default, $start_a:1, $end_a:1)
 {
 	background-color: $default;
-	background: -webkit-linear-gradient($direction, $start, $end);
-	background: -moz-linear-gradient($direction, $start, $end);
-    background: -ms-linear-gradient($direction, $start, $end);
-    -pie-background: linear-gradient($start, $end);
+	background: -webkit-linear-gradient($direction, rgba($start, $start_a), rgba($end, $end_a));
+	background: -moz-linear-gradient($direction, rgba($start, $start_a), rgba($end, $end_a));
+	background: -ms-linear-gradient($direction, rgba($start, $start_a), rgba($end, $end_a));
+	-pie-background: linear-gradient(rgba($start, $start_a), rgba($end, $end_a));
     behavior: url(/stylesheets/PIE.htc);
 }
 

@@ -4,7 +4,7 @@ function run_top()
 	navigation();
 
 	//for ie users
-	if (document.all)
+	if (document.all && navigator.userAgent.indexOf("MSIE 10.0") <= 0)
 	{
 		$('.ie_bar').fadeIn();
 		$('.header').css('paddingTop', '0px');
