@@ -228,6 +228,7 @@ img
 	background-color: $orange;
 	color: $white;	
 	width: 150px;
+	@include hover_shadow($red);
 }
 .product_meta .buttons .favorite
 {
@@ -235,5 +236,6 @@ img
 	color: $light_gray;	
 	margin-left: 30px; 
 	width: 100px;
+	@include hover_shadow();
 }
 

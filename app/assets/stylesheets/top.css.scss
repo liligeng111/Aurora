@@ -123,6 +123,7 @@ body
 	float: left;
 	margin: 8px;
 	font: bold 15px "Microsoft Yahei";
+	@include text_shadow($white);
 }
 
 .login
@@ -131,6 +132,7 @@ body
 	float: left;
 	margin: 8px;
 	font: bold 15px "Microsoft Yahei";
+	@include text_shadow($white);
 }
 
 .top_menu_item_wrapper
@@ -151,6 +153,7 @@ body
 	margin: 8px;
 	font: bold 15px "Microsoft JhengHei";
 	text-decoration : none; 
+	@include text_shadow($white);
 }
 
 .shopping_cart_wrapper
@@ -363,6 +366,7 @@ $search_button_width : 60px;
 	width: $search_button_width;
 	height: $search_input_height;
 	cursor: pointer;
+	@include text_shadow($white);
 }
 
 .search

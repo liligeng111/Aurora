@@ -27,3 +27,24 @@ $yellow : #efdeb0;
 	-khtml-opacity: $value;
 	opacity: $value;
 }
+
+@mixin shadow($x, $y, $r, $c)
+{	
+	box-shadow: $x $y $r $c;
+    behavior: url(/stylesheets/PIE.htc);
+}
+
+@mixin hover_shadow($c:$blue, $r:3px)
+{
+	&:hover
+	{		
+		box-shadow: 0 0 $r $c;
+    	behavior: url(/stylesheets/PIE.htc);
+	}
+}
+
+@mixin text_shadow($c, $r:1px)
+{	
+	filter:glow(Color=#000,Strength=5);
+	text-shadow: 0 0 $r $c;
+}

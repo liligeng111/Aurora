@@ -119,8 +119,9 @@ img
 	width: 80px;
 	height: 80px;
 	z-index: 200;
-	color: $light_gray;
-	@include opacity(0.1);
+	color: $white;
+	@include opacity(0.4);
+	@include text_shadow($blue, 3px);
 	font: 70px cold "Microsoft Yahei";
 	text-align: center;
 	margin-top: (605px - 80px) / 2;
@@ -129,6 +130,7 @@ img
 	&:hover
 	{
 		@include opacity(0.8);
+		@include text_shadow($blue, 5px);
 	}
 }
 
@@ -188,6 +190,9 @@ img
 	margin-bottom: 30px;
 	border: $border;
 	float: left;
+	background-color: $white;
+	cursor: pointer;
+	@include hover_shadow();
 }
 
 
@@ -205,11 +210,6 @@ img
 	border-top: $border;
 	height: $recommand_item_width;
 	width: $recommand_item_width;
-
-	&:hover
-	{
-		@include opacity(0.6);
-	}
 }
 
 .item_info
