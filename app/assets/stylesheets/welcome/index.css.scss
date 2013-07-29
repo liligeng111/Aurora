@@ -8,9 +8,6 @@ $width : 980px;
 $gallery_height : 605px;
 $gallery_margin : 10px;
 $gallery_side_width : 300px;
-$gradient_start : rgba(252,252,252,0);
-$gradient_end : rgba(252,252,252, 1);
-
 input
 {
 	box-sizing: border-box;
@@ -68,14 +65,12 @@ img
 
 .gallery .left .layer
 {
-	background: -webkit-gradient(linear, right top, left top, from($gradient_start), to($gradient_end));
-    background: -ms-linear-gradient(right, $gradient_start, $gradient_end);	
+	@include gradient(right, $white, $white, none, 0, 1)
 }
 
 .gallery .right .layer
 {
-	background: -webkit-gradient(linear, left top, right top, from($gradient_start), to($gradient_end));	
-    background: -ms-linear-gradient(left, $gradient_start, $gradient_end);	
+	@include gradient(left, $white, $white, none, 0, 1)	
 }
 
 .gallery .side .layer_top
@@ -85,8 +80,7 @@ img
 	height: 50%;
 	width: $gallery_side_width;
 	z-index: 200;
-	background: -webkit-gradient(linear, left bottom, left top, from($gradient_start), to($gradient_end));	
-    background: -ms-linear-gradient(bottom, $gradient_start, $gradient_end);	
+	@include gradient(bottom, $white, $white, none, 0, 1)		
 }
 
 .gallery .side .layer_bottom
@@ -96,8 +90,7 @@ img
 	height: 50%;
 	width: $gallery_side_width;
 	z-index: 200;
-	background: -webkit-gradient(linear, left top, left bottom, from($gradient_start), to($gradient_end));	
-    background: -ms-linear-gradient(top, $gradient_start, $gradient_end);	
+	@include gradient(top, $white, $white, none, 0, 1)	
 }
 
 .gallery .side .block
@@ -126,7 +119,7 @@ img
 	width: 80px;
 	height: 80px;
 	z-index: 200;
-	color: $dark_gray;
+	color: $light_gray;
 	@include opacity(0.1);
 	font: 70px cold "Microsoft Yahei";
 	text-align: center;

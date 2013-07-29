@@ -5,7 +5,7 @@
 		<div class="item_wrapper">
 			<div class="item">
 				<div class="img_wrapper">
-					<%= image_tag item_id + ".jpg", :border => 0 %>
+					<%= image_tag item_id.to_s + ".jpg", :border => 0 %>
 				</div>
 				<div class="link_wrapper">
 					<%= link_to Product.find(item_id).name, product_path(item_id) %>
@@ -88,7 +88,7 @@
 	</div>
 </div>
 
-<div class="ie_bar">检测到您正在使用以IE为内核的浏览器，建议您选用Chrome或者Firefox浏览器以获得更好的视觉效果和安全性保障</div>
+<div class="ie_bar">检测到您正在使用以低版本IE为内核的浏览器，建议您选用Chrome或者Firefox浏览器以获得更好的视觉效果和安全性保障</div>
 
 <div class="header">
 	<div class="logo">
