@@ -228,17 +228,24 @@ img
 .product_meta .buttons .buy
 {
 	@include gradient_button($red);
-	border: 1px solid #ddd;
 	color: $white;	
-	//@include hover_shadow($red);
+	@include hover_shadow($red);
 }
 
 .product_meta .buttons .favorite
 {
 	@include gradient_button($white);
-	border: 1px solid #ddd;
 	color: $light_gray;	
 	margin-left: 30px; 
 	@include hover_shadow();
+	border: 1px solid #ddd;
+}
+
+.product_meta .buttons .exist
+{
+	@include gradient_button($orange);
+	color: $white;	
+	margin-left: 30px; 
+	@include hover_shadow($red);
 }
 

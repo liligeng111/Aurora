@@ -9,6 +9,8 @@ Web::Application.routes.draw do
   get "/search" => "products#search"
   get "/recommand" => "products#recommand"
   post '/purchase' => "products#purchase"
+  post '/favourite' => "favourites#add"
+  delete '/favourite' => "favourites#delete"
 
 
   # Example of regular route:

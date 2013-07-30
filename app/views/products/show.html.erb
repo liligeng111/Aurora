@@ -7,6 +7,8 @@
   </script>
 <% end %>
 
+<% exist = Favourite.exists?(["user_id = ? and item_id = ?", "#{current_user.id}", "#{@product.id}"])%>
+
 <div class="product_info">	
 	<%= image_tag(@product.id.to_s + ".jpg", :class => "product_img", :border => 0) %>
 	<div class="magnifier_lens"></div>
@@ -42,13 +44,18 @@
 			<li class="item">
 				<div class="name">购买数量:</div>
 				<div class="number_button" onclick="$(this).next().val(value_minus)">-</div>
-				<%= text_field_tag(:number, "", :class => "number_input", :prompt => "1")%>
+				<%= text_field_tag(:number, "", :class => "number_input", :value => "1")%>
 				<div class="number_button" onclick="$(this).prev().val(value_plus)">+</div>
 			</li>
 		</ul>
 		<div class="buttons">
-			<div class="button buy" onClick="$('#size').val($('.item .selected').get(0).id);$('.product_info form').submit();">加入购物车</div>
-			<div class="button favorite">收藏</div>
+			<div class="button buy" onClick="$('#size').val($('.item .selected').get(0).id);$('.product_info form').submit();">加入购物车</div>		
+
+			<% if exist %>
+				<div class="button exist" onClick="$('.favourite form').submit();">已收藏</div>
+			<% else %>
+				<div class="button favorite" onClick="$('.favourite form').submit();">收藏</div>
+			<% end %>
 		</div>
 		<% end %>
 	</div>
@@ -59,4 +66,17 @@
 </div>
 
 <div class="wft">
+</div>
+
+
+<div class="favourite">
+	<% if exist %>
+			<%= form_tag favourite_path, method: "delete" do %>	
+				<%= hidden_field_tag(:item_id, "", :value => @product.id) %>	
+			<% end %>
+	<% else %>
+			<%= form_tag favourite_path do %>	
+				<%= hidden_field_tag(:item_id, "", :value => @product.id) %>	
+			<% end %>
+	<% end %>
 </div>

@@ -16,16 +16,14 @@ function run_top()
 		$('.devise_alert').fadeIn();
 		setTimeout("$('.devise_alert').fadeOut();", 3000);
 	}
-
-	//authenticity_token
-	$("input[name|='authenticity_token']").val($("[name|='csrf-token']").attr('content'));
-
 }
 
 function input()
 {
 	$('input').each(function(){
 		if ($(this).attr('type') == 'submit')
+			return;
+		if ($(this).attr('type') == 'hidden')
 			return;
 		$(this).val($(this).attr('prompt'));
 		$(this).blur(function()
