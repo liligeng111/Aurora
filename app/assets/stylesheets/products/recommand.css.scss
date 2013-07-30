@@ -1,36 +1,6 @@
 @import "mixins";
 
-.window
-{
-	width: 700px;
-	margin: 0px auto 100px auto;
-}
-
-.msg
-{
-	float: left;
-	width: 500px;
-}
-
-
-.msg h1
-{
-	font-family: "Microsoft Yahei";
-	color: $blue;
-	margin-bottom: 30px;
-}
-
-.links
-{
-	padding-top: 100px;
-	text-align: right;
-	width: 200px;
-	float: left;
-	font-size: 15px;
-	color: $dark_gray;
-}
-
-.links a
+.main h1
 {
 	color: $blue;
 }

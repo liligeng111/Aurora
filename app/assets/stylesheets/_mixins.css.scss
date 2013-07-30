@@ -19,6 +19,11 @@ $yellow : #efdeb0;
     behavior: url(/stylesheets/PIE.htc);
 }
 
+@mixin gradient_button($color)
+{
+	@include gradient(top, $color, darken($color, 5%), $color);
+}
+
 @mixin opacity($value)
 {
 	//-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";

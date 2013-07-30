@@ -6,31 +6,31 @@
 	margin: 0px auto 100px auto;
 }
 
-.sign_up
+.main
 {
 	float: left;
 	width: 500px;
 }
 
-.sign_up #error_explanation 
+.main #error_explanation 
 {
 	color: $red;
 }
 
-.sign_up h1
+.main h1
 {
 	font-family: "Microsoft Yahei";
 	color: $dark_gray;
 	margin-bottom: 30px;
 }
 
-.sign_up .item
+.main .item
 {
 	margin: 15px auto;
 	height: 30px;
 }
 
-.sign_up label
+.main label
 {
 	color: $dark_gray;
 	float: left;
@@ -42,23 +42,23 @@
 	vertical-align: middle;
 }
 
-.sign_up input
+.main input
 {
 	width: 200px;
 	height: 30px;
 }
 
-.sign_up #user_remember_me
+.main #user_remember_me
 {
 	width: 20px;
 }
 
-.sign_up a
+.main a
 {
 	color: $dark_gray;
 }
 
-.sign_up .button input
+.main .button input
 {
 	margin-top: 20px;
 	margin-left: 95px;
@@ -74,6 +74,11 @@
 	float: left;
 	font-size: 15px;
 	color: $dark_gray;
+}
+
+.links .link
+{
+	height: 40px;
 }
 
 .links a

@@ -6,7 +6,10 @@
 	<% path = params[:controller] + "/" + params[:action]%>
 	<% case path %>
 		<% when 'devise/registrations/new', 'devise/registrations/create', 'devise/sessions/new', 'devise/sessions/create' %>
-			<%= stylesheet_link_tag "devise/registrations/new", "data-turbolinks-track" => true %>
+			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
+		<% when 'products/recommand' %>    
+			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
+			<%= stylesheet_link_tag  path, "data-turbolinks-track" => true %>
 		<% else %>    
 			<%= stylesheet_link_tag  path, "data-turbolinks-track" => true %>
 		<% end %>

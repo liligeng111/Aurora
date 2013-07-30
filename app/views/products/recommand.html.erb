@@ -3,14 +3,11 @@
 <% end %>
 
 <div class="window">
-	<div class="msg">
+	<div class="main">
 		<h1>商品成功加入购物车！</h1>
 	</div>
 
-	<div class="links">
-
-	  已有账号？ <%= link_to "登陆", new_session_path(:user) %><br />
-	</div>
+	<%= render 'right_colomn' %>
 
 	<div style="clear: both;"></div>
 </div>

@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="window">
-	<div class="sign_up">
+	<div class="main">
 		<h1>欢迎回来！</h1>
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<div class="item"><%= f.label :email, '邮箱'%>
@@ -20,10 +20,8 @@
 		<% end %>
 	</div>
 
-	<div class="links">
-
-	  还没有账号？ <%= link_to "注册", new_session_path(resource_name) %><br />
-	</div>
+	
+	<%= render 'right_colomn' %>
 
 	<div style="clear: both;"></div>
 </div>
