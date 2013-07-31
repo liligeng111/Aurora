@@ -11,7 +11,7 @@
 
 <body class='<%= yield :class %>' controller='<%=params[:controller]%>' action='<%=params[:action]%>'>
 
-	<p class="devise_alert"><%= flash[:alert] %><%= flash[:notice] %></p>
+	<p class="notification" onClick="$(this).fadeOut()"><%= flash[:alert] %><%= flash[:notice] %></p>
 	<%= render 'top' %>
 
 	<%= yield %>

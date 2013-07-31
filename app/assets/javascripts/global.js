@@ -15,11 +15,11 @@ function run_top()
 		$('.header').css('paddingTop', '0px');
 	}
 
-	//devise alert
-	if($('.devise_alert').text() != '')
+	//notification
+	if($('.notification').text() != '')
 	{
-		$('.devise_alert').fadeIn();
-		setTimeout("$('.devise_alert').fadeOut();", 3000);
+		$('.notification').fadeIn();
+		setTimeout("$('.notification').fadeOut();", 2000);
 	}
 }
 

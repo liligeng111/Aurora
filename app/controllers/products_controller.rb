@@ -18,7 +18,8 @@ class ProductsController < ApplicationController
 		session[:cart][item_id] = Hash.new if session[:cart][item_id] == nil
 		session[:cart][item_id][size] = 0 if session[:cart][item_id][size] == nil
 		session[:cart][item_id][size] += number.to_i
-		redirect_to recommand_path :id => item_id
+		flash[:notice] = "成功将商品加入购物车"
+		redirect_to product_path :id => item_id
 	end
 
 	def recommand
