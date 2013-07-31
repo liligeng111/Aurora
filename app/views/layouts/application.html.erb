@@ -7,7 +7,7 @@
 	<% case path %>
 		<% when 'devise/registrations/new', 'devise/registrations/create', 'devise/sessions/new', 'devise/sessions/create' %>
 			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
-		<% when 'products/recommand' %>    
+		<% when 'products/recommand', 'favourites/show' %>    
 			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
 			<%= stylesheet_link_tag  path, "data-turbolinks-track" => true %>
 		<% else %>    

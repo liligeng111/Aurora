@@ -24,4 +24,9 @@ class FavouritesController < ApplicationController
 			redirect_to :controller => :products, :action => :show, :id => params[:item_id]
 	end
 
+	def show
+		condition = ["user_id = ?", "#{current_user.id}"];
+		@favourites = Favourite.find(:all, condition);
+	end
+
 end

@@ -36,7 +36,7 @@
 
 		<% if user_signed_in?%>		
 			<li class="login_wrapper">
-				<%= link_to current_user.email, edit_user_registration_path(current_user), :class => "login" %>
+				<%= link_to current_user.email, user_favourite_path, :class => "login" %>
 			</li>	
 			<li class="login_wrapper">
 				<%= link_to "注销", destroy_user_session_path, :method => :delete, :class => "login" %>

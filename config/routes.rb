@@ -12,6 +12,8 @@ Web::Application.routes.draw do
   post '/favourite' => "favourites#add"
   delete '/favourite' => "favourites#delete"
 
+  get '/user/favourite' => "favourites#show"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,19 @@
+<% content_for :head do %>
+	<title><%= '我的收藏' %></title>
+<% end %>
+
+<div class="window">
+	<div class="main">
+		<h1>我的收藏</h1>
+		<% @favourites.each do |f| %>
+			<div class="item" onClick="window.location=$(this).find('a').attr('href');">
+				<%= image_tag f.item_id.to_s + ".jpg", :border => 0 %>
+				<%= link_to Product.find(f.item_id).name, product_path(f.item_id), :class => 'name'%>
+			</div>
+		<% end %>
+	</div>
+
+	<%= render 'right_colomn' %>
+
+	<div style="clear: both;"></div>
+</div>
