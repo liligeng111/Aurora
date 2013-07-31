@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= stylesheet_link_tag "top", "data-turbolinks-track" => true %>
-
-	<% path = params[:controller] + "/" + params[:action]%>
-	<% case path %>
-		<% when 'devise/registrations/new', 'devise/registrations/create', 'devise/sessions/new', 'devise/sessions/create' %>
-			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
-		<% when 'products/recommand', 'favourites/show' %>    
-			<%= stylesheet_link_tag "theme1", "data-turbolinks-track" => true %>
-			<%= stylesheet_link_tag  path, "data-turbolinks-track" => true %>
-		<% else %>    
-			<%= stylesheet_link_tag  path, "data-turbolinks-track" => true %>
-		<% end %>
-
+	
+	<%= stylesheet_link_tag "application", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
 	<%= csrf_meta_tags %>
 	<%= yield :head %>
 </head>
 
-<body controller='<%=params[:controller]%>' action='<%=params[:action]%>'>
+<body class='<%= yield :class %>' controller='<%=params[:controller]%>' action='<%=params[:action]%>'>
+
 	<p class="devise_alert"><%= flash[:alert] %><%= flash[:notice] %></p>
 	<%= render 'top' %>
 

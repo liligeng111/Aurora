@@ -1,5 +1,8 @@
 @import "mixins";
 
+.theme1
+{
+
 .window
 {
 	width: 700px;
@@ -84,4 +87,6 @@
 .links a
 {
 	color: $blue;
+}
+
 }

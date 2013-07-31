@@ -8,6 +8,10 @@ $width : 980px;
 $gallery_height : 605px;
 $gallery_margin : 10px;
 $gallery_side_width : 300px;
+
+.index
+{
+
 input
 {
 	box-sizing: border-box;
@@ -236,4 +240,6 @@ img
 	text-align : right;
 	margin-right: 10px;
 	height: $recommand_height - $recommand_item_width - $recommand_brand_height - $recommand_info_height - 2px;
+}
+
 }

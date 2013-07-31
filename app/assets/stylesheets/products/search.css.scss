@@ -5,6 +5,9 @@ $recommand_height : 280px;
 $recommand_brand_height : 30px;
 $recommand_info_height : 45px;
 
+.products_search
+{
+
 input
 {
 	box-sizing: border-box;
@@ -97,4 +100,6 @@ img
 	text-align : right;
 	margin: 0 auto;
 	height: $recommand_height - $recommand_item_width - $recommand_brand_height - $recommand_info_height - 2px;
+}
+
 }

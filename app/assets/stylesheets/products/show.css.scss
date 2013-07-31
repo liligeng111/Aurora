@@ -7,6 +7,9 @@ $magnifier_opacity : 0.6;
 $magnifier_width : 490px;
 $magnification : 5;
 
+.products_show
+{
+
 img
 {
 	display: block;
@@ -249,3 +252,4 @@ img
 	@include hover_shadow($red);
 }
 
+}

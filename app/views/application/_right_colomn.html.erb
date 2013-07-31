@@ -8,7 +8,7 @@
 
 		<%- if Devise.mappings[:user].registerable? && controller_name != 'registrations' %>
 			<div class="link">
-				还没有账号？ <%= link_to "注册", new_session_path(:user) %><br />
+				还没有账号？ <%= link_to "注册", new_registration_path(:user) %><br />
 			</div>
 		<% end -%>
 	<% end -%>
