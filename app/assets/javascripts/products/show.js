@@ -1,7 +1,15 @@
 factor = 5;
 
+$(function() {run_product();});
+$(window).bind('page:change', function() {
+  run_product();
+})
+
 function run_product()
 {
+	if ($('body').attr('controller') != 'products' || $('body').attr('action') != 'show')
+		return;
+
 	offset_left = $('.product_img').offset().left;
 	offset_top = $('.product_img').offset().top;
 

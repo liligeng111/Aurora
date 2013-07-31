@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= stylesheet_link_tag "top" %>
+	<%= stylesheet_link_tag "top", "data-turbolinks-track" => true %>
 
 	<% path = params[:controller] + "/" + params[:action]%>
 	<% case path %>
@@ -15,20 +15,14 @@
 		<% end %>
 
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
 	<%= csrf_meta_tags %>
 	<%= yield :head %>
 </head>
 
-<body>
+<body controller='<%=params[:controller]%>' action='<%=params[:action]%>'>
 	<p class="devise_alert"><%= flash[:alert] %><%= flash[:notice] %></p>
 	<%= render 'top' %>
-
-	<script Language="JavaScript"> 
-	$(document).ready(function() 
-	{
-			run_top();
-	});
-	</script> 
 
 	<%= yield %>
 

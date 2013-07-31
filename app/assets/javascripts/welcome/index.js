@@ -1,5 +1,13 @@
+$(function() {run_index();});
+$(window).bind('page:change', function() {
+  run_index();
+})
+
 function run_index()
 {
+	if ($('body').attr('controller') != 'welcome' || $('body').attr('action') != 'index')
+		return;
+	
 	var gallery = $('.gallery img');
 	gallery_pivot = 1;
 	$(gallery.get(0)).css('margin-left', '-1480px');
