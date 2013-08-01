@@ -2,15 +2,15 @@
 	<title><%= '我的收藏' %></title>
 <% end %>
 
-<% content_for :class do %>favourited_show theme1<% end %>
+<% content_for :class do %>favourites_show theme1<% end %>
 
 <div class="window">
 	<div class="main">
 		<h1>我的收藏</h1>
 		<% @favourites.each do |f| %>
 			<div class="item" onClick="window.location=$(this).find('a').attr('href');">
-				<%= image_tag f.item_id.to_s + ".jpg", :border => 0 %>
-				<%= link_to Product.find(f.item_id).name, product_path(f.item_id), :class => 'name'%>
+				<%= image_tag f.product_id.to_s + ".jpg", :border => 0 %>
+				<%= link_to Product.find(f.product_id).name, product_path(f.product_id), :class => 'name'%>
 			</div>
 		<% end %>
 	</div>
