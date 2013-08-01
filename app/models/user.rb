@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :favourites
-	# validates :item_id, :presence => {:on => :create}
 end

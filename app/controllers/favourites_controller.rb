@@ -3,29 +3,25 @@ class FavouritesController < ApplicationController
 
 
 	def add
-		condition = ["user_id = ? and item_id = ?", "#{current_user.id}", "#{params[:item_id]}"];
-		unless Favourite.exists?(condition)
-			favourite = current_user.favourites.create(params.permit(:item_id))
-			if favourite.save?
-				flash[:notice] = "已将商品加入您的收藏"
-			else
-				falsh[:notice] = '无效的商品编号'
-			end
+		favourite = current_user.favourites.create(params.permit(:product_id))
+		if favourite.save
+			flash[:notice] = "已将商品加入您的收藏"
+			redirect_to :controller => :products, :action => :show, :id => params[:product_id]
 		else
-			flash[:notice] = "该商品已在您的收藏之中"
-		end		
-			redirect_to :controller => :products, :action => :show, :id => params[:item_id]
+			flash[:notice] = favourite.errors.first[1]
+			redirect_to root_path
+		end
 	end
 
 	def delete
-		condition = ["user_id = ? and item_id = ?", "#{current_user.id}", "#{params[:item_id]}"];
+		condition = ["user_id = ? and product_id = ?", "#{current_user.id}", "#{params[:product_id]}"];
 		if Favourite.exists?(condition)
 			Favourite.destroy_all(condition);
 			flash[:notice] = "已将商品移出您的收藏"
 		else
 			flash[:notice] = "您并没有收藏该商品"
 		end		
-			redirect_to :controller => :products, :action => :show, :id => params[:item_id]
+			redirect_to :controller => :products, :action => :show, :id => params[:product_id]
 	end
 
 	def show

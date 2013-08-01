@@ -12,7 +12,7 @@
 			</div>
 		<% end -%>
 
-		<%- if Devise.mappings[:user].recoverable? && controller_name != 'passwords' %>
+		<%- if false && Devise.mappings[:user].recoverable? && controller_name != 'passwords' %>
  			<div class="link">
 				忘记密码了？ <%= link_to "找回", new_password_path(:user) %><br />
 			</div>

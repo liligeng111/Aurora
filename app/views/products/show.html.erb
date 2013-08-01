@@ -4,7 +4,7 @@
 
 <% content_for :class do %>products_show<% end %>
 
-<% exist = user_signed_in? && Favourite.exists?(["user_id = ? and item_id = ?", "#{current_user.id}", "#{@product.id}"])%>
+<% exist = user_signed_in? && Favourite.exists?(["user_id = ? and product_id = ?", "#{current_user.id}", "#{@product.id}"])%>
 
 <div class="product_info">	
 	<%= image_tag(@product.id.to_s + ".jpg", :class => "product_img", :border => 0) %>
@@ -14,7 +14,7 @@
 		<%= content_tag("div", @product.name, :class => "product_name")%>
 
 		<%= form_tag(purchase_path, :method => :post) do %>
-		<%= hidden_field_tag(:item_id, "", :value => @product.id) %>
+		<%= hidden_field_tag(:product_id, "", :value => @product.id) %>
 		<%= hidden_field_tag(:size, "")%>
 		<ul class="list">
 		 	<li class="item">
@@ -69,11 +69,11 @@
 <div class="favourite">
 	<% if exist %>
 			<%= form_tag favourite_path, method: "delete" do %>	
-				<%= hidden_field_tag(:item_id, "", :value => @product.id) %>	
+				<%= hidden_field_tag(:product_id, "", :value => @product.id) %>	
 			<% end %>
 	<% else %>
 			<%= form_tag favourite_path do %>	
-				<%= hidden_field_tag(:item_id, "", :value => '') %>	
+				<%= hidden_field_tag(:product_id, "", :value => @product.id) %>	
 			<% end %>
 	<% end %>
 </div>

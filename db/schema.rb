@@ -14,12 +14,13 @@
 ActiveRecord::Schema.define(version: 20130730091040) do
 
   create_table "favourites", force: true do |t|
-    t.string   "item_id"
+    t.integer  "product_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "favourites", ["product_id"], name: "index_favourites_on_product_id"
   add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
 
   create_table "products", force: true do |t|

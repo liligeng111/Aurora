@@ -1,14 +1,14 @@
 <ul class="shopping_cart_list top_menu_window">	
 	<% cart_count = 0 %>
 	<% session[:cart] = Hash.new if session[:cart] == nil %>
-	<% session[:cart].each do |item_id, item_cart| %>
+	<% session[:cart].each do |product_id, item_cart| %>
 		<div class="item_wrapper">
 			<div class="item">
 				<div class="img_wrapper">
-					<%= image_tag item_id.to_s + ".jpg", :border => 0 %>
+					<%= image_tag product_id.to_s + ".jpg", :border => 0 %>
 				</div>
 				<div class="link_wrapper">
-					<%= link_to Product.find(item_id).name, product_path(item_id) %>
+					<%= link_to Product.find(product_id).name, product_path(product_id) %>
 				</div>
 				<% size_count = "" %>
 				<% sizes = ['S', 'M', 'L', 'XL'] %>

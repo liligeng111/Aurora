@@ -13,13 +13,13 @@ class ProductsController < ApplicationController
 	def purchase
 		number = params[:number].to_i
 		size = params[:size].to_i
-		item_id = params[:item_id].to_i
+		product_id = params[:product_id].to_i
 		session[:cart] = Hash.new if session[:cart] == nil
-		session[:cart][item_id] = Hash.new if session[:cart][item_id] == nil
-		session[:cart][item_id][size] = 0 if session[:cart][item_id][size] == nil
-		session[:cart][item_id][size] += number.to_i
+		session[:cart][product_id] = Hash.new if session[:cart][product_id] == nil
+		session[:cart][product_id][size] = 0 if session[:cart][product_id][size] == nil
+		session[:cart][product_id][size] += number.to_i
 		flash[:notice] = "成功将商品加入购物车"
-		redirect_to product_path :id => item_id
+		redirect_to product_path :id => product_id
 	end
 
 	def recommand
