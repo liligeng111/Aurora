@@ -1,6 +1,6 @@
 $(function() {run_top();});
 $(window).bind('page:change', function() {
-  run_top();
+	run_top();
 })
 
 function run_top()

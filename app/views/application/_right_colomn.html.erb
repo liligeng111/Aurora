@@ -11,6 +11,14 @@
 				还没有账号？ <%= link_to "注册", new_registration_path(:user) %><br />
 			</div>
 		<% end -%>
+
+		<%- if Devise.mappings[:user].recoverable? && controller_name != 'passwords' %>
+ 			<div class="link">
+				忘记密码了？ <%= link_to "找回", new_password_path(:user) %><br />
+			</div>
+		<% end -%>
+
+
 	<% end -%>
 
 </div>
