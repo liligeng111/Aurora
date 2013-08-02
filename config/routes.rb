@@ -9,11 +9,18 @@ Web::Application.routes.draw do
   get "/search" => "products#search"
   get "/recommand" => "products#recommand"
   post '/purchase' => "products#purchase"
+
   post '/favourite' => "favourites#add"
   delete '/favourite' => "favourites#delete"
-
   get '/user/favourite' => "favourites#show"
+  
+  post '/delivery' => "deliveries#add"
+  delete '/delivery' => "deliveries#delete"
+  get '/user/delivery' => "deliveries#show"
 
+  post '/order' => "orders#create"
+  get '/user/order' => "orders#show"
+  get '/order/new' => "orders#new"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

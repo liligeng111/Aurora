@@ -1,0 +1,13 @@
+<% content_for :head do %>
+	<title><%= '购物车结算' %></title>
+<% end %>
+
+<% content_for :class do %>orders_new<% end %>
+
+<div class='delivery_selector'>
+	<% @deliveries.each_with_index do |d, i| %>
+		<div class='delivery <%= 'select' if i == 0 %>' onClick="$(this).parent().children().removeClass('select');$(this).addClass('select');">
+			<%= d.name %>
+		</div>
+	<% end %>
+</div>

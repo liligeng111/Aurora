@@ -21,30 +21,10 @@
         company: "公司"
         remember_me: 记住我
         current_password: 旧密码
-      topic:
-        title: "标题"
-        user_id: "用户"
-        node_id: "节点"
-        body: "正文"
-      reply:
-        body: "回复内容"
-      post:
-        title: 标题
-        body: 正文
-        tag_list: 标签
-        source: 来源
-        source_url: 来源地址
-      page:
-        slug: Slug
-        title: 页面标题
-        body: 内容
-        locked: 锁定开关
-        change_desc: 变更描述
-      site:
-        name: 网站名称
-        url: 地址
-        desc: 简单介绍
-        site_node_id: 分类
+      delivery:
+        name: 收件人
+        phone: 电话
+        address: 地址
     errors:
       models:
         user: 用户

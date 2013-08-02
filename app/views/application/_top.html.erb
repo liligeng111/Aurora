@@ -12,9 +12,9 @@
 				</div>
 				<% size_count = "" %>
 				<% sizes = ['S', 'M', 'L', 'XL'] %>
-				<% item_cart.each do |size, number| %>
-					<% cart_count += number.to_i %>
-					<% size_count += number.to_s + ' x ' + sizes[size.to_i] + ', ' %>
+				<% item_cart.each do |size, quantity| %>
+					<% cart_count += quantity.to_i %>
+					<% size_count += quantity.to_s + ' x ' + sizes[size.to_i] + ', ' %>
 				<% end %>
 				<% size_count = size_count.slice(0, size_count.length - 2) %>
 				<div class="size_wrapper">
@@ -62,7 +62,8 @@
 			<a href="" class="top_menu_item shopping_cart_count"><%= cart_count %></a>
 		</li>
 		<li class="top_menu_item_wrapper shopping_cart_wrapper">
-			<a href="" class="top_menu_item shopping_cart">去购物车结算</a>
+			<%= link_to "去购物车结算", order_new_path, :class => 'top_menu_item shopping_cart' %>
+
 		</li>
 		<li class="top_menu_item_wrapper navigation_wrapper">
 			<a href="" class="top_menu_item">鞋品</a>

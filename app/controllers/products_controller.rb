@@ -11,13 +11,13 @@ class ProductsController < ApplicationController
 	end
 
 	def purchase
-		number = params[:number].to_i
+		quantity = params[:quantity].to_i
 		size = params[:size].to_i
 		product_id = params[:product_id].to_i
 		session[:cart] = Hash.new if session[:cart] == nil
 		session[:cart][product_id] = Hash.new if session[:cart][product_id] == nil
 		session[:cart][product_id][size] = 0 if session[:cart][product_id][size] == nil
-		session[:cart][product_id][size] += number.to_i
+		session[:cart][product_id][size] += quantity.to_i
 		flash[:notice] = "成功将商品加入购物车"
 		redirect_to product_path :id => product_id
 	end

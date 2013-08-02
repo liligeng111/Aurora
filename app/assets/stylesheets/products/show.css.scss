@@ -178,7 +178,7 @@ $magnification : 5;
 	cursor: pointer;
 }
 
-.product_meta .number_button
+.product_meta .quantity_button
 {
 	border: $border;
 	font-size: 8px;
@@ -195,7 +195,7 @@ $magnification : 5;
 	}
 }
 
-.product_meta .number_input
+.product_meta .quantity_input
 {
 	width: 30px;
 	float: left;

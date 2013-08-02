@@ -40,9 +40,9 @@
 			</li>
 			<li class="item">
 				<div class="name">购买数量:</div>
-				<div class="number_button" onclick="$(this).next().val(value_minus)">-</div>
-				<%= text_field_tag(:number, "", :class => "number_input", :prompt => "1")%>
-				<div class="number_button" onclick="$(this).prev().val(value_plus)">+</div>
+				<div class="quantity_button" onclick="$(this).next().val(value_minus)">-</div>
+				<%= text_field_tag(:quantity, "", :class => "quantity_input", :prompt => "1")%>
+				<div class="quantity_button" onclick="$(this).prev().val(value_plus)">+</div>
 			</li>
 		</ul>
 		<div class="buttons">

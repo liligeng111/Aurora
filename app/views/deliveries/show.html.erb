@@ -1,0 +1,48 @@
+<% content_for :head do %>
+	<title><%= '我的地址' %></title>
+<% end %>
+
+<% content_for :class do %>deliveries_show theme1<% end %>
+
+<div class="window">
+	<div class="main">
+		<h1>我的地址</h1>
+		<% @deliveries.each do |f| %>
+			<div class="item">
+				<div class='field name'><%= f.name %></div>
+				<div class='field phone'><%= f.phone %></div>
+				<div class='field address'><%= f.address %></div>
+				<div class='delete' id="<%=f.id%>" onClick="$('#delete_form #delivery_id').val($(this).attr('id'));$('#delete_form').submit();">删除</div>
+			</div>
+		<% end %>
+		<h1>新的地址</h1>
+			<%= form_tag delivery_path do %>
+				<div class="item">
+					<%= label_tag :name, '收件人' %>
+					<%= text_field_tag :name%>
+				</div>
+
+				<div class="item">
+					<%= label_tag :phone, '电话' %>
+					<%= text_field_tag :phone%>
+				</div>
+
+				<div class="item">
+					<%= label_tag :address, '地址' %>
+					<%= text_area_tag :address%>
+				</div>
+
+				<div class="button">
+					<input name="commit" type="submit" value="添加" />
+				</div>
+			<% end %>
+	</div>
+
+	<%= render 'right_colomn' %>
+
+	<div style="clear: both;"></div>
+</div>
+
+<%= form_tag delivery_path, method: "delete", :id => 'delete_form' do %>	
+	<%= hidden_field_tag(:delivery_id, "") %>	
+<% end %>

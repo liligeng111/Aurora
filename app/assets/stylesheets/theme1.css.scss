@@ -30,7 +30,7 @@
 .main .item
 {
 	margin: 15px auto;
-	height: 30px;
+	min-height: 30px;
 }
 
 .main label
@@ -49,6 +49,12 @@
 {
 	width: 200px;
 	height: 30px;
+}
+
+.main textarea
+{
+	width: 200px;
+	height: 100px;
 }
 
 .main #user_remember_me
@@ -82,6 +88,7 @@
 .links .link
 {
 	height: 40px;
+	line-height: 40px;
 }
 
 .links a

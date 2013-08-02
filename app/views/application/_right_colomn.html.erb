@@ -18,7 +18,14 @@
 			</div>
 		<% end -%>
 
+	<% else -%>
+		<div class="link">
+			<%= link_to "我的收藏", user_favourite_path %><br />
+		</div>
 
+		<div class="link">
+			<%= link_to "我的地址", user_delivery_path %><br />
+		</div>
 	<% end -%>
 
 </div>

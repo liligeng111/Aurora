@@ -1,0 +1,29 @@
+@import "mixins";
+
+.orders_new
+{
+
+.delivery_selector
+{
+	width: $width;
+	height: 300px;
+	margin: 0 auto;
+}
+
+.delivery
+{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 auto;
+	@include hover_shadow($light_gray);
+	cursor: pointer;
+}
+
+.delivery_selector .select
+{
+	border: $border;
+	@include shadow(0, 0, 5px, $blue);
+}
+
+}

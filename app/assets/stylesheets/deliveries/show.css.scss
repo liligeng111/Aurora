@@ -1,0 +1,39 @@
+@import "mixins";
+
+.deliveries_show
+{
+
+.main .item .field
+{
+	float: left;
+	height: 30px;
+}
+
+.name
+{
+	width: 80px;
+}
+
+.phone
+{
+	width: 100px;
+}
+
+.delete
+{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'Microsoft Yahei';
+	font-weight: bold;
+	cursor: pointer;
+	color: $white;
+	width: 40px;
+	float: right;
+	@include gradient_button($red);
+	@include hover_shadow($red);
+}
+
+
+}

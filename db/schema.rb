@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730091040) do
+ActiveRecord::Schema.define(version: 20130802074350) do
+
+  create_table "deliveries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "phone"
+    t.string   "address"
+    t.integer  "postal_code"
+    t.boolean  "show"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "deliveries", ["user_id"], name: "index_deliveries_on_user_id"
 
   create_table "favourites", force: true do |t|
     t.integer  "product_id"
@@ -22,6 +35,22 @@ ActiveRecord::Schema.define(version: 20130730091040) do
 
   add_index "favourites", ["product_id"], name: "index_favourites_on_product_id"
   add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "delivery_id"
+    t.integer  "order_number"
+    t.integer  "size"
+    t.integer  "quantity"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["delivery_id"], name: "index_orders_on_delivery_id"
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "products", force: true do |t|
     t.string   "name"

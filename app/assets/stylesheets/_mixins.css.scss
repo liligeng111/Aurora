@@ -8,6 +8,7 @@ $red : #c3272b;
 $orange : #ed5736;
 $blue : #117cb0;
 $yellow : #efdeb0;
+$width : 980px;
 
 @mixin gradient($direction, $start, $end, $default, $start_a:1, $end_a:1)
 {

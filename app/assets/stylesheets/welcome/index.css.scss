@@ -4,7 +4,6 @@ $recommand_item_width : 165px;
 $recommand_height : 265px;
 $recommand_brand_height : 30px;
 $recommand_info_height : 35px;
-$width : 980px;
 $gallery_height : 605px;
 $gallery_margin : 10px;
 $gallery_side_width : 300px;
@@ -19,6 +18,8 @@ $gallery_side_width : 300px;
 	height: $gallery_height;
 	margin-bottom: 50px;
 	overflow: hidden;
+	border: $border;
+	@include shadow(0, 0, 3px, $light_gray);
 }
 
 .gallery img

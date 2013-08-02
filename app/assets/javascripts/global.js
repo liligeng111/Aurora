@@ -26,10 +26,9 @@ function run_top()
 function input()
 {
 	$('input').each(function(){
-		if ($(this).attr('type') == 'submit')
+		if ($(this).attr('prompt') == null)
 			return;
-		if ($(this).attr('type') == 'hidden')
-			return;
+
 		$(this).val($(this).attr('prompt'));
 		$(this).blur(function()
 		{
