@@ -10,13 +10,19 @@
 </head>
 
 <body class='<%= yield :class %>' controller='<%=params[:controller]%>' action='<%=params[:action]%>'>
-
-	<p class="notification" onClick="$(this).fadeOut()"><%= flash[:alert] %><%= flash[:notice] %></p>
-	<%= render 'top' %>
-
-	<%= yield %>
-
+	<div id="wrap">
+		<div id="main" class="clearfix">
+			<div id="content">				
+				<%= render 'top' %>
+				<%= yield %>
+			</div>
+			<div id="side">
+			</div>
+		</div>
+	</div>
 	<%= render 'footer' %>
-
+	<p class="notification" onClick="$(this).fadeOut()"><%= flash[:alert] %><%= flash[:notice] %></p>
+	<div class='wallpaper'></div>
 </body>
 </html>
+

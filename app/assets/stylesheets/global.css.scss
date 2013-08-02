@@ -31,10 +31,17 @@ ul
 
 body
 {
-	background-color: $white;
 	margin-top: $top_menu_height;
 	margin-right: auto;
 	margin-left: auto;
+	background-size: 50px 50px;
+	background-color: darken($white, 5%);
+	background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(90deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(90deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent) 0 0 / 50px 50px $white;
+	behavior: url(/pie/PIE.htc);
+	overflow-x: hidden;
 }
 
 img
@@ -42,9 +49,48 @@ img
 	display: block;
 }
 
-.content
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main
 {
-	width:100%;
+	overflow:auto;
+	padding-bottom: 150px;
+}  /* must be same height as the footer */
+
+.footer
+{
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	height: 150px;
+	clear:both;
+	// margin: 10px auto 0 auto;
+	background-color: $dark_gray2;
+} 
+
+/*Opera Fix*/
+body:before 
+{
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
+.wallpaper
+{
+	position: fixed;
+	width:1080px;
+	height: 100%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: -1;
+	background-color: $white;
+	@include shadow(0, 0, 3px, $light_gray);
 }
 
 .ie_bar
@@ -402,12 +448,6 @@ $search_button_width : 60px;
 	text-decoration: none;
 	font-size: 15px;
 	color: $gray;
-}
-
-.footer
-{
-	margin: 10px auto 0 auto;
-	background-color: $dark_gray2;
 }
 
 .footer .wrapper
