@@ -1,5 +1,12 @@
 class WelcomeController < ApplicationController
-  def index  	
+
+	caches_page :about
+
+	def index  	
 		@products = Product.all
-  end
+	end
+
+	def about
+	end
+
 end
