@@ -25,7 +25,7 @@ function run_index()
 	//button
 	$('.gallery .right_button').click(function(){
 		var time = new Date();
-		if (time.getTime() - gallery_button_last_click < 500)
+		if (time.getTime() - gallery_button_last_click < 1000)
 			return;
 		clearTimeout(timerID);
 		gallery_animate(1);
@@ -33,7 +33,7 @@ function run_index()
 
 	$('.gallery .left_button').click(function(){
 		var time = new Date();
-		if (time.getTime() - gallery_button_last_click < 500)
+		if (time.getTime() - gallery_button_last_click < 1000)
 			return;
 		clearTimeout(timerID);
 		gallery_animate(-1);
