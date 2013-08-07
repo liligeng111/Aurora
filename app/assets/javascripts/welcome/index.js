@@ -43,7 +43,7 @@ function run_index()
 function gallery_animate(direction)
 {
 	var gallery = $('.gallery img');
-	position = ['-2470px', '-1480px', '-490px', '500px', '1490px'];
+	var position = ['-2470px', '-1480px', '-490px', '500px', '1490px'];
 
 	for (var i = direction; Math.abs(i) <= 2; i -= direction)
 	{
