@@ -44,7 +44,7 @@
 		<% else %>
 			<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
 				<li class="input_wrapper">
-					<%= f.email_field :email, :class => 'input', :prompt => '注册邮箱'%>
+					<%= f.email_field :email, :class => 'input', :prompt => '邮箱'%>
 				</li>
 				<li class="input_wrapper">
 					<%= f.email_field :password, :class => 'input', :prompt => '密码'%>
