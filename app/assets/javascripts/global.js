@@ -5,6 +5,12 @@ $(window).bind('page:change', function() {
 
 function run_top()
 {
+
+	if (top.location !== self.location) 
+	{
+		top.location=self.location;
+	}
+
 	input();
 	navigation();
 
